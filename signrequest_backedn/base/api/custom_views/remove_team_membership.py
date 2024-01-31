@@ -50,6 +50,10 @@ class RemoveTeamMembers(APIView):
             # Get the team
             team = get_object_or_404(Team, pk=team_id)
 
+            # Check if the requesting user is the owner of the team
+            if request.user != team.owner:
+                return Response({'detail': 'You are not the owner of this team.'}, status=status.HTTP_403_FORBIDDEN)
+
             # Get the users to be removed
             users_to_remove = User.objects.filter(pk__in=user_ids)
 
