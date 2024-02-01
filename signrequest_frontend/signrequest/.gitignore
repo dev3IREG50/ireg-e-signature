@@ -1,14 +1,3 @@
-# .gitignore
-
-# Ignore compiled Python files
-__pycache__/
-
-# Other common Python-related ignores
-*.pyc
-*.pyo
-*.pyd
-
-
 # Logs
 logs
 *.log
