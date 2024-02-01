@@ -98,19 +98,10 @@ def generate_and_save_pdf(signing_instance):
         [Spacer(1, 12)],
     ]
 
-    # Section 4: Sent On Details
-    # section4 = [
-    #     [Paragraph("<b>Document URL:</b>", body_style)],
-    #     [Paragraph(f"<a href='{signing_instance.document.file.url}'>View Document</a>", body_style)],
-    #     [Spacer(1, 12)],
-    #     [Paragraph("<b>Signature Image URL:</b>", body_style)],
-    #     [Paragraph(f"<a href='{signing_instance.signature_image_url}'>View Signature</a>", body_style)],
-    #     [Spacer(1, 12)],
-    # ]
     signature_image_url = signing_instance.signature_image_url
     section4 = [
         [Paragraph("<b>Document URL:</b>", body_style)],
-        [Paragraph(f"<a href='{signing_instance.document.file.url}' target='_blank'>View Document</a>", body_style)],
+        [Paragraph(f"<a href='{signing_instance.document.file.url}'>View Document</a>", body_style)],
         [Spacer(1, 12)],
         [Paragraph("<b>Signature Image URL:</b>", body_style)],
         [Paragraph(f"{signature_image_url}", body_style)],
