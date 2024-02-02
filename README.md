@@ -97,7 +97,7 @@ This project is inspired by the functionalities provided by signrequest.com, off
 2. Navigate to the project directory:
    cd signrequest_backend
 3. Create a virtual environment:
-   python -m env\Scripts\activate (if you use VS code, it will authomatically opens the virtual environment)
+   python -m env\Scripts\activate (if you use VS code, it will automatically opens the virtual environment)
 4. Install dependacies:
    pip install -r requirements.txt
 5. If you use your own database server don't forget to make migrations
