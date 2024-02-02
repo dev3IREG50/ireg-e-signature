@@ -99,8 +99,13 @@ This project is inspired by the functionalities provided by signrequest.com, off
    cd signrequest_backend
    ```
 3. Create a virtual environment:
+   - First install the virtual environemt
    ```bash
-   python -m env\Scripts\activate (if you use VS code, it will automatically opens the virtual environment)
+   python -m pip install virtualenv
+   ```
+   - Activate the virtual environment
+   ```bash
+   python -m env\scripts\activate (if you use VS code, it will automatically opens the virtual environment)
    ```
 4. Install dependacies:
    ```bash
@@ -111,3 +116,28 @@ This project is inspired by the functionalities provided by signrequest.com, off
    ```bash
    python manage.py runserver
    ```
+
+### Navigating the Project:
+
+Once you've successfully set up the project, head over to the base/api folder—it's
+the heart of the implementation. Here's a breakdown of what you'll find in key directories:
+
+###### custom_views:
+
+- In this directory, you'll discover all the endpoints meticulously organized with modular and class documentation.
+- Each endpoint is detailed and designed to be easily understood, ensuring a smooth exploration of the codebase.
+
+###### utils:
+
+- Dive into the utils folder to explore a collection of utility functions. Notably, this includes the logic behind email functionalities.
+
+###### permissions:
+
+- The permissions folder houses all the logic related to permissions, providing a centralized location for managing access controls.
+
+###### Code Organization:
+
+- My commitment to clarity is evident in the meticulous organization of the codebase.
+  Detailed documentation accompanies each module and class, facilitating an intuitive understanding of the code.
+
+Feel free to explore the project, and you'll find that the code is not just functional but also organized and easy to follow. If you have any questions or need further assistance, don't hesitate to reach out. Happy coding!
