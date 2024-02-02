@@ -65,6 +65,8 @@ This project is inspired by the functionalities provided by signrequest.com, off
 
 ### Prerequisites
 
+#### For Backend
+
 - Python 3.x
 - Django
 - Django REST framework
@@ -88,7 +90,7 @@ This project is inspired by the functionalities provided by signrequest.com, off
 - sqlparse==0.4.4
 - tzdata==2023.4
 
-### Installation
+### Installation for backend
 
 1. Clone the repository:
    ```bash
@@ -134,6 +136,70 @@ the heart of the implementation. Here's a breakdown of what you'll find in key d
 ###### permissions:
 
 - The permissions folder houses all the logic related to permissions, providing a centralized location for managing access controls.
+
+### Prerequisites
+
+#### Frontend Dependancies
+
+- "@syncfusion/ej2-react-buttons": "^24.1.45",
+- "@syncfusion/ej2-react-inputs": "^24.1.45",
+- "@tanstack/react-query": "^4.35.7",
+- "axios": "^1.6.3",
+- "classnames": "^2.5.1",
+- "date-fns": "^3.2.0",
+- "jwt-decode": "^3.1.2",
+- "lucide-react": "^0.303.0",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "react-dropzone": "^14.2.3",
+- "react-pdf": "^7.7.0",
+- "react-router-dom": "^6.21.1",
+- "react-signature-canvas": "^1.0.6",
+- "react-spinners": "^0.13.8",
+- "sonner": "^1.3.1"
+
+### Instalation for fronend
+
+- Just make sure that you have the package.json file, and execute this command in the signrequest_frontend folder
+  ```bash
+  npm install
+  ```
+  This will install all the dependencies required for this project
+
+### React Code Structure
+
+The React side of the project is meticulously organized into eight distinct folders, each serving a specific purpose:
+
+1. **`components`:**
+
+   - This folder holds all the reusable components used throughout the project. These components are designed for versatility and can be easily incorporated into various sections.
+
+2. **`contexts`:**
+
+   - In the `contexts` folder, you'll find all the context files responsible for fetching data from Django and providing global state for each component in the project. These contexts ensure efficient state management across components.
+
+3. **`forms`:**
+
+   - The `forms` folder contains all the form components utilized in the project. These forms are thoughtfully structured to streamline user interactions and data submission.
+
+4. **`hooks`:**
+
+   - For custom functionality, head to the `hooks` folder. It houses all the custom hooks designed to enhance and simplify the functionality of the components.
+
+5. **`images`:**
+
+   - All static images are neatly organized in the `images` folder. This centralized location simplifies image management and retrieval throughout the project.
+
+6. **`pages`:**
+
+   - Within the `pages` folder, you'll find individual pages of the project. While the components in this folder are not designed for reuse, they represent entire pages and contribute to the overall project structure.
+
+7. **`styles`:**
+
+   - All CSS files, providing styling for each page, are consolidated in the `styles` folder. Each page has its own styling file with a similar name, facilitating easy navigation and maintenance.
+
+8. **`utils`:**
+   - The `utils` folder is crucial for asynchronous code execution and React's interaction with Django. All API calls happen within this folder, and each page has its own provider. If you want to explore how React interacts with Django, this is where you should invest your time.
 
 ###### Code Organization:
 
