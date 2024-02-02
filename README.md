@@ -95,11 +95,19 @@ This project is inspired by the functionalities provided by signrequest.com, off
    git clone https://github.com/dev3IREG50/ireg-e-signature.git
    ```
 2. Navigate to the project directory:
+   ```bash
    cd signrequest_backend
+   ```
 3. Create a virtual environment:
+   ```bash
    python -m env\Scripts\activate (if you use VS code, it will automatically opens the virtual environment)
+   ```
 4. Install dependacies:
+   ```bash
    pip install -r requirements.txt
+   ```
 5. If you use your own database server don't forget to make migrations
 6. Start the server:
+   ```bash
    python manage.py runserver
+   ```
