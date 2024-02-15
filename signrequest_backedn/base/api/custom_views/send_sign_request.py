@@ -88,7 +88,7 @@ def send_signing_request(request):
                         document=document, recipient=recipient
                     )
 
-                    link_app = f"https://e-signrequest.netlify.app/sign-documents/{signing.id}"
+                    link_app = f"http://localhost:5173/sign-documents/{signing.id}"
 
                     context = {
                         "link_app": link_app,

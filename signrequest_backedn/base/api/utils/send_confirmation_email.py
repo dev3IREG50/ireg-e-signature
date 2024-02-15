@@ -42,8 +42,8 @@ def send_confirmation_email(sender_email, receiver_email, sign_id):
         This function sends confirmation emails to both the sender and receiver
         with links to the home page and the document log files.
     """
-    home_page = "https://e-signrequest.netlify.app/"
-    log_files = f"https://e-signrequest.netlify.app/download-document-log-file/{sign_id}"
+    home_page = "http://localhost:5173/"
+    log_files = f"http://localhost:5173/download-document-log-file/{sign_id}"
 
     context = {
         "home_page": home_page,

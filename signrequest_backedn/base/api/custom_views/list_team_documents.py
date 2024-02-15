@@ -23,6 +23,11 @@ from rest_framework.response import Response
 from ..models import TeamDocumentSigning
 from ..serializers import TeamSigningSerializer
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.shortcuts import get_object_or_404
+
 class ListTeamDocumentsView(ListAPIView):
     """
     - View class for listing TeamDocumentSigning instances related to a
@@ -91,4 +96,42 @@ class ListAllTeamDocumentsView(ListAPIView):
     queryset = TeamDocumentSigning.objects.all()
     serializer_class = TeamSigningSerializer
     permission_classes = [IsAuthenticated]
+
+
+class TeamDocumentSigningDetailView(APIView):
+    """
+    API View to retrieve a TeamDocumentSigning instance by ID.
+
+    This view expects a GET request with the TeamDocumentSigning instance ID provided as a path parameter.
+    If the specified TeamDocumentSigning instance is found, it returns the serialized data for that instance.
+    If the instance is not found, it returns a 404 Not Found response.
+
+    Endpoint: /api/team-document-signings/<int:document_signing_id>/
+
+    HTTP Methods:
+        - GET: Retrieve the TeamDocumentSigning instance by ID.
+
+    Response status codes:
+        - 200 OK: Successful retrieval of the TeamDocumentSigning instance.
+        - 404 Not Found: If the specified TeamDocumentSigning instance is not found.
+
+    Example usage:
+        - GET /api/team-document-signings/456/
+          Response:
+          {
+            "id": 456,
+            "field1": "value1",
+            "field2": "value2",
+            ...
+          }
+    """
+    def get(self, request, document_signing_id):
+        # Get the TeamDocumentSigning instance by ID or return 404 if not found
+        document_signing = get_object_or_404(TeamDocumentSigning, pk=document_signing_id)
+
+        # Serialize the TeamDocumentSigning instance
+        serializer = TeamSigningSerializer(document_signing)
+
+        # Return the serialized data in the response
+        return Response(serializer.data, status=status.HTTP_200_OK)
 

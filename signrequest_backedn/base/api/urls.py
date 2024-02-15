@@ -41,7 +41,9 @@ from .views import (
     TeamSigningDocumentDetailAPIView,
     RemoveDocumentsView,
     RemoveTeamDocumentsView,
-    RemoveTeamMembers
+    RemoveTeamMembers,
+    SigningDetailView,
+    TeamDocumentSigningDetailView
 )
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
@@ -61,6 +63,8 @@ urlpatterns = [
     path('update-profile/', UpdateProfile.as_view(), name='update_profile'),
     path('remove_documents/', RemoveDocumentsView.as_view(), name='remove_documents'),
 
+    path('signings/<int:signing_id>/', SigningDetailView.as_view(), name='signing-detail'),
+
     # Teams
     path('teams/', TeamListCreateAPIView.as_view(), name='team-list-create'),
     path('teams/<int:pk>/', TeamRetrieveUpdateDestroyAPIView.as_view(), name='team-retrieve-update-destroy'),
@@ -74,6 +78,7 @@ urlpatterns = [
 
     # Team documents
     path('list-team-documents/<int:team_id>/', ListTeamDocumentsView.as_view(), name='list-team-documents'),
+    path('team-document-signing/<int:document_signing_id>/', TeamDocumentSigningDetailView.as_view(), name='team-document-signing-detail'),
     path('team/<int:team_id>/send-signing-request/', send_signing_request_for_team, name='send_signing_request_for_team'),
     path('all-team-documents/', ListAllTeamDocumentsView.as_view(), name='list-all-team-documents'),
     path('team/team-sign-documents/<int:id>/', TeamSigningDocumentDetailAPIView.as_view(), name='team-signing-document-detail'),

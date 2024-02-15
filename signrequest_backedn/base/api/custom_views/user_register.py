@@ -14,8 +14,14 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 import json
-from django.core.validators import validate_email
+# from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+
+
+def validate_email_address(email):
+    # Regular expression pattern for email validation
+    email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(email_pattern, email)
 
 
 @csrf_exempt
@@ -45,7 +51,8 @@ def register_user(request):
             return JsonResponse({"error": "Incomplete registration data"}, status=400)
 
         try:
-            validate_email(email)
+            if not validate_email_address(email):
+                return JsonResponse({"error": "Invalid email address"}, status=400)
         except ValidationError as e:
             return JsonResponse({"error": "Invalid email address"}, status=400)
 

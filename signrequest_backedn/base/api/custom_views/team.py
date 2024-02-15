@@ -36,6 +36,7 @@ class TeamListCreateAPIView(APIView):
 
     def post(self, request, format=None):
         mutable_data = request.data.copy()
+        print("mutable_data: ", mutable_data)
          # Set the owner to the user making the request
         mutable_data['owner'] = request.user.id 
         # serializer = TeamSerializer(data=mutable_data)

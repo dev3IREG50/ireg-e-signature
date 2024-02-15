@@ -105,7 +105,7 @@ def send_signing_request_for_team(request, team_id):
                         document=document, recipient=recipient
                     )
 
-                    link_app = f"https://e-signrequest.netlify.app/team/sign-documents/{signing.id}"
+                    link_app = f"http://localhost:5173/team/sign-documents/{signing.id}"
 
                     context = {
                         "link_app": link_app,

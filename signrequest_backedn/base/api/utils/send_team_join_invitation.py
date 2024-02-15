@@ -5,7 +5,7 @@ from django.utils.crypto import get_random_string
 
 
 def send_team_join_invitation(receiver_email, team_id, invitation_token):
-    home_page = "https://e-signrequest.netlify.app/"
+    home_page = "http://localhost:5173"
 
     invitation_link = f"{home_page}/accept-invitation/?token={invitation_token}&team_id={team_id}"
 

@@ -57,6 +57,8 @@ from base.api.custom_views.team_sign_document import TeamSigningDocumentDetailAP
 from base.api.custom_views.remove_documents import RemoveDocumentsView
 from base.api.custom_views.remove_team_documents import RemoveTeamDocumentsView
 from base.api.custom_views.remove_team_membership import RemoveTeamMembers
+from base.api.custom_views.list_all_documents import SigningDetailView
+from base.api.custom_views.list_team_documents import TeamDocumentSigningDetailView
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
